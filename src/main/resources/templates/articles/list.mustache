@@ -1,0 +1,35 @@
+{{>layouts/header}}
+<div class="jumbotron">
+    <h1>Article 목록</h1>
+    <hr>
+    <p>articles/index.mustache</p>
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>제목</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {{#articles}}
+        <tr>
+            <td>{{id}}</td>
+            <td>
+                <a href="/articles/show/{{id}}">{{title}}</a>
+            </td>
+            <td>
+                <a class="btn btn-info" href="/articles/edit/{{id}}">수정</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/articles/delete/{{id}}">삭제</a>
+            </td>
+        </tr>
+    {{/articles}}
+    </tbody>
+</table>
+
+
+{{>layouts/footer}}
